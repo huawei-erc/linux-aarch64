@@ -50,6 +50,15 @@ static DEFINE_PER_CPU(struct pmu_hw_events, cpu_hw_events);
 /* Set at runtime when we know what CPU type we are. */
 static struct arm_pmu *cpu_pmu;
 
+const char *perf_pmu_name(void)
+{
+	if (!cpu_pmu)
+		return NULL;
+
+	return cpu_pmu->name;
+}
+EXPORT_SYMBOL_GPL(perf_pmu_name);
+
 int
 armpmu_get_max_events(void)
 {

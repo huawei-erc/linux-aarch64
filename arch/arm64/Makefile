@@ -42,6 +42,8 @@ core-$(CONFIG_XEN) += arch/arm64/xen/
 libs-y		:= arch/arm64/lib/ $(libs-y)
 libs-y		+= $(LIBGCC)
 
+drivers-$(CONFIG_OPROFILE)      += arch/arm64/oprofile/
+
 # Default target when executing plain make
 KBUILD_IMAGE	:= Image.gz
 KBUILD_DTBS	:= dtbs
