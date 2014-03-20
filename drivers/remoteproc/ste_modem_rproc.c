@@ -164,7 +164,7 @@ sproc_find_loaded_rsc_table(struct rproc *rproc, const struct firmware *fw)
 }
 
 /* STE modem firmware handler operations */
-const struct rproc_fw_ops sproc_fw_ops = {
+struct rproc_fw_ops sproc_fw_ops = {
 	.load = sproc_load_segments,
 	.find_rsc_table = sproc_find_rsc_table,
 	.find_loaded_rsc_table = sproc_find_loaded_rsc_table,
